@@ -32,7 +32,6 @@ RCT_EXPORT_METHOD(show:(NSString *)message)
         HUD.label.text = message;
         HUD.margin = 10.f;
         HUD.removeFromSuperViewOnHide = YES;
-        
         [HUD hideAnimated:YES afterDelay:2];
         
     });
@@ -47,6 +46,8 @@ RCT_EXPORT_METHOD(showLoading:(NSString *)message)
         [self getHUD];
         HUD.mode = MBProgressHUDModeIndeterminate;
         HUD.activityIndicatorColor = [UIColor whiteColor];
+        HUD.opacity = 0.8;
+        HUD.margin = 10.f;
         HUD.label.textColor = [UIColor whiteColor];
         HUD.label.text = message;
         HUD.removeFromSuperViewOnHide = YES;
