@@ -33,9 +33,7 @@ RCT_EXPORT_METHOD(show:(NSString *)message)
         HUD.margin = 10.f;
         HUD.removeFromSuperViewOnHide = YES;
         [HUD hideAnimated:YES afterDelay:2];
-        
     });
-    
 }
 
 RCT_EXPORT_METHOD(showLoading:(NSString *)message)
@@ -46,13 +44,15 @@ RCT_EXPORT_METHOD(showLoading:(NSString *)message)
         [self getHUD];
         HUD.mode = MBProgressHUDModeIndeterminate;
         HUD.activityIndicatorColor = [UIColor whiteColor];
-        HUD.opacity = 0.8;
-        HUD.margin = 10.f;
+        HUD.bezelView.backgroundColor=[UIColor blackColor];
+        HUD.dimBackground = YES;
+        HUD.opacity = 1;
+        HUD.margin = 15.f;
         HUD.label.textColor = [UIColor whiteColor];
         HUD.label.text = message;
+        HUD.label.font = [UIFont boldSystemFontOfSize:12];
         HUD.removeFromSuperViewOnHide = YES;
         [HUD showAnimated:YES];
-        
     });
     
 }
